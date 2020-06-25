@@ -17,7 +17,7 @@ class PhotosGridController: LBTAListController<PhotoGridCell,String>{
 
 struct PhotoGridPreview:PreviewProvider {
     static var previews: some View{
-        Text("Grid preview")
+        Text("Grid previewdf")
     }
     
     struct ContainerView:UIViewControllerRepresentable {
