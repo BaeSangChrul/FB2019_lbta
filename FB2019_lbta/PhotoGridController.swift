@@ -12,12 +12,20 @@ class PhotoGridCell: LBTAListCell<String> {
 
 
 class PhotosGridController: LBTAListController<PhotoGridCell,String>{
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.backgroundColor = .lightGray
+        
+        self.items = ["1","2","3"]
+    }
+    
+    
 
 }
 
 struct PhotoGridPreview:PreviewProvider {
     static var previews: some View{
-        Text("Grid previewdf")
+        ContainerView()
     }
     
     struct ContainerView:UIViewControllerRepresentable {
