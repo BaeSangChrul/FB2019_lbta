@@ -11,12 +11,15 @@ class PostCell: LBTAListCell<String> {
     let nameLabel = UILabel(text:"Name Label")
     let dateLabel = UILabel(text:"Friday at 11:11Am")
     let postTextLabel = UILabel(text: "Here is my post text")
-    let imageViewGrid = UIView(backgroundColor: .yellow)
+    
+//    let imageViewGrid = UIView(backgroundColor: .yellow)
+    
+    let photoGridController = PhotosGridController()
     
     override func setupViews() {
         backgroundColor = .white
         
-        stack(hstack(imageView.withWidth(40).withWidth(40),stack(nameLabel,dateLabel),spacing:8).padLeft(12).padRight(12).padTop(12),postTextLabel,imageViewGrid,spacing:8)
+        stack(hstack(imageView.withWidth(40).withWidth(40),stack(nameLabel,dateLabel),spacing:8).padLeft(12).padRight(12).padTop(12),postTextLabel,photoGridController.view,spacing:8)
     }
 }
 
@@ -32,7 +35,7 @@ class MainController: LBTAListController<PostCell,String>,UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width, height: 200)
+        return .init(width: view.frame.width, height: 400)
     }
 }
 import SwiftUI
